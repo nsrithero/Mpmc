@@ -1,0 +1,96 @@
+#include<reg51.h>
+sbit RA=P1^0;
+sbit YA=P1^1;
+sbit GA=P1^2;
+sbit RB=P3^2;
+sbit YB=P3^3;
+sbit GB=P3^4;
+sbit RC=P3^5;
+sbit YC=P3^6;
+sbit GC=P3^7;
+sbit RRD=P1^4;
+sbit YD=P1^5;
+sbit GD=P2^6;
+void delay(void)
+{
+	unsigned int i,j;
+	
+	for(i=0;i<200;i++);
+				for(j=0;j<500;j++);
+	}
+void superdelay()
+{
+unsigned int i;
+for(i=0;i<25;i++)
+delay;
+}
+void main()
+{
+P3=0;while(1)
+{
+ RA=0;
+ GA=1;
+ YA=0;
+ RB=1;
+ GB=0;
+ YB=0;
+ RC=1;
+ GC=0;
+ YC=0;
+ RRD=1;
+ GD=0;
+ YD=0;
+ superdelay();
+ GA=0;
+ YA=1;
+ delay();
+ RA=1;
+ GA=0;
+ YA=0;
+ RB=0;
+ GB=1;
+ YB=0;
+ RC=1;
+ GC=0;
+ YC=0;
+ RRD=1;
+ GD=0;
+ YD=0;
+ superdelay();
+ GB=0; 
+ YB=1;
+ delay();
+ RA=1;
+ GA=0;
+ YA=0;
+ RB=1;
+ GB=0;
+ YB=0;
+ RC=0;
+ GC=1;
+ YC=0;
+ RRD=1;
+ GD=0;
+ YD=0;
+ superdelay();
+ GC=0;
+ YC=1;
+ delay();
+ RA=1;
+ GA=0;
+ YA=0;
+ RB=1;
+ GB=0;
+ YB=0;
+ RC=1;
+ GC=0;
+ YC=0;
+ RRD=0;
+ GD=1;
+ YD=0;
+ 
+	  }
+ }
+ END;
+ 
+ 
